@@ -51,6 +51,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
 
     React.useEffect(() => {
         if (selectedList === null) return null
+        if (selectedList === undefined) return null
         const people = primeState.peopleMarkups.filter(pm => pm.list === selectedList.id).map(pm => pm.person)
         const systems = primeState.systemMarkups.filter(pm => pm.list === selectedList.id).map(pm => pm.system)
 
